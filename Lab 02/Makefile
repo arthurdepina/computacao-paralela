@@ -1,0 +1,18 @@
+# Compiler
+CC=gcc
+
+TARGET=MatrixTimesVector_Threads
+
+all: $(TARGET)
+
+$(TARGET): $(TARGET).o
+	$(CC) $(TARGET).o -o $(TARGET)
+
+$(TARGET).o: $(TARGET).c
+	$(CC) -c $(TARGET).c
+
+clean:
+	rm -f $(TARGET) $(TARGET).o
+
+run: $(TARGET)
+	./$(TARGET)
