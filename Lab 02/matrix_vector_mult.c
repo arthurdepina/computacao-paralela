@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
         printf("Uso: %s <numero de threads>\n", argv[0]);
         return 1;
     }
-
+                  // ascii to integer
     int numThreads = atoi(argv[1]);
     if (numThreads <= 0) {
         printf("Número de threads deve ser maior que 0.\n");
