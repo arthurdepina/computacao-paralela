@@ -9,3 +9,7 @@ E em seguida:
 por exemplo:
 
 `./matrix 4`
+
+<br>
+
+![a](https://github.com/arthurdepina/computacao-paralela/assets/84559827/068a36bc-7e9b-487e-b16f-c5afee8bcc8a)
