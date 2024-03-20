@@ -13,3 +13,7 @@ por exemplo:
 <br>
 
 ![a](https://github.com/arthurdepina/computacao-paralela/assets/84559827/068a36bc-7e9b-487e-b16f-c5afee8bcc8a)
+
+<br>
+
+![b](https://github.com/arthurdepina/computacao-paralela/assets/84559827/46cc0fe8-5b9a-45cc-b5a7-b00c7b193d38)
