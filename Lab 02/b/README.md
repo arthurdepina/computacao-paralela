@@ -17,3 +17,7 @@ por exemplo:
 <br>
 
 ![b](https://github.com/arthurdepina/computacao-paralela/assets/84559827/46cc0fe8-5b9a-45cc-b5a7-b00c7b193d38)
+
+<br>
+
+Em uma solução nova, eu consideraria alterar a distribuição de linhas por threads, creio que em casos como o de 6 threads, há muito tempo sendo gasto na distribuição. 
