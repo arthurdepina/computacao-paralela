@@ -2,14 +2,11 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define M 2 // Número total de linhas da matriz
-#define N 3 // Número de colunas da matriz e tamanho do vetor
+#define M 4000 // Número total de linhas da matriz
+#define N 8000 // Número de colunas da matriz e tamanho do vetor
 
-int matrix[M][N] = {
-    {1, -1, 2},
-    {0, -3, 1}
-};
-int vector[N] = {2, 1, 0};
+int matrix[M][N];
+int vector[N];
 int result[M] = {0};
 
 typedef struct {
@@ -39,6 +36,17 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     if (numThreads > M) numThreads = M;
+
+    int value = 0;
+    for(int i = 0; i < M; i++) {
+        for(int j = 0; j < N; j++) {
+            matrix[i][j] = value++;
+        }
+    }
+
+    for(int i = 0; i < N; i++) {
+        vector[i] = (i % 2 == 0) ? 1 : -1;
+    }
 
     pthread_t threads[numThreads];
     ThreadData threadData[numThreads];
