@@ -11,13 +11,16 @@ por exemplo:
 `./matrix 4`
 
 <br>
-1)
+2)
+
 ![a](https://github.com/arthurdepina/computacao-paralela/assets/84559827/068a36bc-7e9b-487e-b16f-c5afee8bcc8a)
 
 <br>
-2)
+1)
+
 ![b](https://github.com/arthurdepina/computacao-paralela/assets/84559827/46cc0fe8-5b9a-45cc-b5a7-b00c7b193d38)
 
 <br>
 3)
+
 Em uma solução nova, eu consideraria alterar a distribuição de linhas por threads, creio que em casos como o de 6 threads, há muito tempo sendo gasto na distribuição. 
