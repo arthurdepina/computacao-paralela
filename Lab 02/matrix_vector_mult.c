@@ -3,7 +3,7 @@
 #include <pthread.h>
 
 #define M 4000 // Número total de linhas da matriz
-#define N 8000 // Número de colunas da matriz e tamanho do vetor
+#define N 4000 // Número de colunas da matriz e tamanho do vetor
 
 int matrix[M][N];
 int vector[N];
@@ -13,6 +13,34 @@ typedef struct {
     int startRow;
     int endRow;
 } ThreadData;
+
+
+void printMatrix() {
+    printf("Matriz:\n");
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+        if (i == 20) {
+            printf("(matriz muito grande)\n");
+            break;
+        }
+    }
+}
+
+
+void printVector() {
+    printf("Vetor:\n");
+    for (int i = 0; i < N; i++) {
+        printf("%d ", vector[i]);
+        if (i == 20) {
+            printf("(vetor muito grande)\n");
+            break;
+        }
+    }
+    printf("\n");
+}
 
 void* computeRange(void* arg) {
     ThreadData* data = (ThreadData*)arg;
@@ -29,7 +57,6 @@ int main(int argc, char *argv[]) {
         printf("Uso: %s <numero de threads>\n", argv[0]);
         return 1;
     }
-                  // ascii to integer
     int numThreads = atoi(argv[1]);
     if (numThreads <= 0) {
         printf("Número de threads deve ser maior que 0.\n");
@@ -48,6 +75,9 @@ int main(int argc, char *argv[]) {
         vector[i] = (i % 2 == 0) ? 1 : -1;
     }
 
+    // printMatrix();
+    // printVector();
+
     pthread_t threads[numThreads];
     ThreadData threadData[numThreads];
 
@@ -57,7 +87,7 @@ int main(int argc, char *argv[]) {
     int currentRow = 0;
     for (int i = 0; i < numThreads; i++) {
         threadData[i].startRow = currentRow;
-        currentRow += rowsPerThread + (extraRows > 0 ? 1 : 0); // Distribui as linhas extras
+        currentRow += rowsPerThread + (extraRows > 0 ? 1 : 0); // Distribui as linhas
         threadData[i].endRow = currentRow - 1;
         extraRows--;
 
