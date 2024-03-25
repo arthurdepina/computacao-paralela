@@ -2,14 +2,16 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define M 2 // Número de linhas da matriz
-#define N 3 // Número de colunas da matriz e linhas do vetor
+#define M 4 // Número de linhas da matriz
+#define N 4 // Número de colunas da matriz e linhas do vetor
 
 int matrix[M][N] = {
-        {1, -1, 2},
-        {0, -3, 1}
+    {0, 1, 2, 3},
+    {4, 5, 6, 7},
+    {8, 9, 10, 11},
+    {12, 13, 14, 15}
 };
-int vector[N] = {2, 1, 0};
+int vector[N] = {1, -1, 1, -1};;
 int result[M];
 
 typedef struct {
